@@ -2,9 +2,11 @@
 
 ## 1. Project Overview
 
-SampleCqrsDapperApi เป็นตัวอย่างโปรเจกต์ .NET 8 ที่ออกแบบด้วย Clean Architecture + CQRS Pattern และใช้ Dapper เป็น ORM หลักในการเชื่อมต่อกับ SQL Server Database
+SampleCqrsDapperApi เป็นตัวอย่างโปรเจกต์ .NET 8 ที่ออกแบบด้วย Clean Architecture + CQRS Pattern และใช้ Dapper เป็น ORM หลักสำหรับเชื่อมต่อกับ SQL Server Database
 
-### Tech Stack
+---
+
+## 2. Tech Stack
 
 - .NET 8
 - Dapper
@@ -14,7 +16,9 @@ SampleCqrsDapperApi เป็นตัวอย่างโปรเจกต์
 - Clean Architecture
 - VSCode (Dev Environment)
 
-### Architecture Structure
+---
+
+## 3. Architecture Structure
 
 - **Domain**: Entity, Value Object, Base Types
 - **Application**: Commands, Queries, DTOs, Handlers
@@ -23,11 +27,7 @@ SampleCqrsDapperApi เป็นตัวอย่างโปรเจกต์
 
 ---
 
-## 2. Database Setup
-
-### 2.1 Create Database and Tables
-
-เชื่อมต่อ SQL Server แล้วรันคำสั่งต่อไปนี้:
+## 4. Database Schema
 
 ```sql
 CREATE DATABASE SampleCQRSDB;
@@ -51,3 +51,76 @@ CREATE TABLE Orders (
     FOREIGN KEY (CustomerId) REFERENCES Customers(Id)
 );
 GO
+```
+
+---
+
+## 5. How to Run
+
+### 5.1 Clone the Repository
+
+```bash
+git clone https://github.com/tanathon-101/SampleCqrsDapperApi.git
+cd SampleCqrsDapperApi
+```
+
+### 5.2 Config Connection String
+
+แก้ไขไฟล์ `appsettings.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=SampleCQRSDB;User Id=sa;Password=YourStrongPassword123;TrustServerCertificate=True;"
+  }
+}
+```
+
+### 5.3 Restore Dependencies
+
+```bash
+dotnet restore
+```
+
+### 5.4 Run the Application
+
+```bash
+dotnet run --project SampleCqrsDapperApi.WebAPI
+```
+
+---
+
+## 6. API Usage
+
+### POST `/api/customers`
+
+**Request Body:**
+
+```json
+{
+  "name": "Josh Aspire",
+  "email": "josh@sample.com"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Customer created successfully"
+}
+```
+
+### GET `/api/customers`
+
+**Response:**
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Josh Aspire",
+    "email": "josh@sample.com"
+  }
+]
+```
