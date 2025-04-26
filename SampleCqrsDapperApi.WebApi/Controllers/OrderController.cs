@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SampleCqrsDapperApi.Application.Commands;
+using SampleCqrsDapperApi.Application.Queries;
 
 namespace SampleCqrsDapperApi.WebApi.Controllers;
 
