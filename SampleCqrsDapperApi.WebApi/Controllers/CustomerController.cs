@@ -3,6 +3,7 @@ using MediatR;
 using SampleCqrsDapperApi.Application.Commands;
 using SampleCqrsDapperApi.Domain.Entities;
 using SampleCqrsDapperApi.Domain.Interfaces;
+using SampleCqrsDapperApi.Application.Queries;
 
 namespace SampleCqrsDapperApi.WebApi.Controllers
 {
@@ -30,6 +31,12 @@ namespace SampleCqrsDapperApi.WebApi.Controllers
         public async Task<IActionResult> GetAllCustomers()
         {
             var customers = await _customerRepository.GetAllCustomersAsync();
+            return Ok(customers);
+        }
+        [HttpGet("WithOrders")]
+        public async Task<IActionResult> GetCustomersWithOrders()
+        {
+            var customers = await _mediator.Send(new GetCustomerWithOrdersQuery());
             return Ok(customers);
         }
     }

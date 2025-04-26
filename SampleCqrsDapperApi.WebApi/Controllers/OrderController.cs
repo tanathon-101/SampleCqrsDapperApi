@@ -28,4 +28,13 @@ public class OrderController : ControllerBase
         var orders = await _mediator.Send(new GetOrdersQuery());
         return Ok(orders);
     }
+    [HttpPut("ChangeCustomer")]
+    public async Task<IActionResult> ChangeOrderCustomer([FromBody] UpdateOrderCustomerCommand command)
+    {
+        var result = await _mediator.Send(command);
+        if (result)
+            return Ok(new { Message = "Order's Customer updated successfully" });
+        else
+            return BadRequest(new { Message = "Failed to update Order's Customer" });
+    }
 }
