@@ -1,1 +1,22 @@
 # SampleCqrsDapperApi
+CREATE DATABASE SampleCQRSDB;
+GO
+
+USE SampleCQRSDB;
+GO
+
+CREATE TABLE Customers (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL
+);
+GO
+
+CREATE TABLE Orders (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    CustomerId INT NOT NULL,
+    OrderDate DATETIME NOT NULL,
+    TotalAmount DECIMAL(18,2) NOT NULL,
+    FOREIGN KEY (CustomerId) REFERENCES Customers(Id)
+);
+GO
