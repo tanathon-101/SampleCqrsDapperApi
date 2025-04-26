@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Dependency Injection
 builder.Services.AddMediatR(typeof(CreateCustomerCommand).Assembly);
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddControllers();
 
 // 🔥 Swagger Default Setup
