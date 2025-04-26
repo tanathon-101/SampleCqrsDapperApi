@@ -1,5 +1,4 @@
 # SampleCqrsDapperApi
-# SampleCqrsDapperApi
 
 ## Project Overview
 
