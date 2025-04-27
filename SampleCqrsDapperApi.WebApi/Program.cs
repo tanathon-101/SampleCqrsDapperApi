@@ -3,6 +3,9 @@ using MediatR;
 using SampleCqrsDapperApi.Domain.Interfaces;
 using SampleCqrsDapperApi.Infrastructure.Repositories;
 using SampleCqrsDapperApi.Application.Commands;
+using FluentValidation.AspNetCore;
+using SampleCqrsDapperApi.Application.Validators;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMediatR(typeof(CreateCustomerCommand).Assembly);
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-builder.Services.AddControllers();
-
-// 🔥 Swagger Default Setup
+builder.Services.AddControllers();;
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateCustomerCommandValidator>();
+    
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
