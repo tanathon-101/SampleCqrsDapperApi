@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCqrsDapperApi.Applica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCqrsDapperApi.Infrastructure", "SampleCqrsDapperApi.Infrastructure\SampleCqrsDapperApi.Infrastructure.csproj", "{DE684E06-9980-46A5-93B6-18BBD752499F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCqrsDapperApiUniTest", "SampleCqrsDapperApiUniTest\SampleCqrsDapperApiUniTest.csproj", "{12903955-6DFB-4AF9-87B3-E275DAA39E54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{DE684E06-9980-46A5-93B6-18BBD752499F}.Release|x64.Build.0 = Release|Any CPU
 		{DE684E06-9980-46A5-93B6-18BBD752499F}.Release|x86.ActiveCfg = Release|Any CPU
 		{DE684E06-9980-46A5-93B6-18BBD752499F}.Release|x86.Build.0 = Release|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Debug|x64.Build.0 = Debug|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Debug|x86.Build.0 = Debug|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Release|x64.ActiveCfg = Release|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Release|x64.Build.0 = Release|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Release|x86.ActiveCfg = Release|Any CPU
+		{12903955-6DFB-4AF9-87B3-E275DAA39E54}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
